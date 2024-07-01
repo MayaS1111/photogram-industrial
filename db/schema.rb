@@ -17,18 +17,17 @@ ActiveRecord::Schema[7.0].define(version: 2024_07_01_165600) do
 
   create_table "comments", force: :cascade do |t|
     t.bigint "author_id", null: false
-    t.text "body"
+    t.text "body", null: false
     t.bigint "photo_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["author_id"], name: "index_comments_on_author_id"
     t.index ["photo_id"], name: "index_comments_on_photo_id"
   end
 
   create_table "follow_requests", force: :cascade do |t|
     t.bigint "recipient_id", null: false
     t.bigint "sender_id", null: false
-    t.string "status"
+    t.string "status", default: "pending"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["recipient_id"], name: "index_follow_requests_on_recipient_id"
