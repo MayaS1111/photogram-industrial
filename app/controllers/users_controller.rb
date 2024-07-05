@@ -1,17 +1,22 @@
 class UsersController < ApplicationController
   def show
-    @user = User.find_by!(username: params.fetch(:username))
+    @user = the_user
   end
   def liked
-    @user = User.find_by!(username: params.fetch(:username))
+    @user = the_user
   end
   def feed
-    @user = User.find_by!(username: params.fetch(:username))
+    @user = the_user
   end
   def followers
-    @user = User.find_by!(username: params.fetch(:username))
+    @user = the_user
   end
   def following
-    @user = User.find_by!(username: params.fetch(:username))
+    @user = the_user
+  end
+
+  private
+  def the_user
+    User.find_by!(username: params.fetch(:username))
   end
 end
