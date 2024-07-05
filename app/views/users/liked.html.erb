@@ -15,9 +15,9 @@
   </div>
 </div>
 
-<h2>Own photos</h2>
+<h2>Liked photos</h2>
 <ul>
-  <% @user.own_photos.each do |photo| %>
-    <%= render "photos/photo", photo: photo %>
+  <% @user.liked_photos.each do |photo| %>
+    <%= render "likes/like", photo: photo %>
   <% end %>
 </ul>
