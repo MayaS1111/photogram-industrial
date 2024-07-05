@@ -24,9 +24,9 @@
   </div>
 </div>
 
-<h2>Own photos</h2>
+<h2>Following</h2>
 <ul>
-  <% @user.own_photos.each do |photo| %>
+  <% @user.accepted_sent_follow_requests.each do |photo| %>
     <%= render "photos/photo", photo: photo %>
   <% end %>
 </ul>
